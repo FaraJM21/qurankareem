@@ -7,7 +7,10 @@ import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 function Surah() {
   let number = useLocation();
   const [surah, setSurah] = useState([]);
-  // const [audio, setAudio] = useState(0);
+  const [play, setPlay] = useState(false);
+  const [audioNum, setAudioNum] = useState(null);
+ 
+ 
 
   useEffect(() => {
     axios
@@ -15,45 +18,51 @@ function Surah() {
       .then((response) => setSurah(response.data.data.surahs[number.state]));
   }, [number.state]);
 
-  
-  const handleClick = (item, index) => {
-    document.getElementById(`player ${index}`).play();
-    let b = document.getElementById(`player ${index}`).duration;
-    const newArr = surah.ayahs.map((items) => {
-      if (items.number === item.number) {
-        items.sajda = true;
-      }
-      return items;
-    });
+    let ayahsArr = number.state !== null? surah.ayahs.map(item => item.audio): [];
+  //  console.log(ayahsArr);
 
-    
-    setSurah({ ...surah, ayahs: newArr });
+    const playAudio = (index) =>{
+       setAudioNum(index)
+       
+     
+    }
 
-    setTimeout(() => {
-      const newArr = surah.ayahs.map((items) => {
-        if (items.number === item.number) {
-          items.sajda = true;
-        }
-        return items;
-      });
+  // const handleClick = (item, index) => {
+  //   document.getElementById(`player ${index}`).play();
+  //   let b = document.getElementById(`player ${index}`).duration;
+  //   const newArr = surah.ayahs.map((items) => {
+  //     if (items.number === item.number) {
+  //       items.sajda = true;
+  //     }
+  //     return items;
+  //   });
 
-      setSurah({ ...surah, ayahs: newArr });
-    }, b * 1000);
+  //   setSurah({ ...surah, ayahs: newArr });
 
-  
-  };
+  //   setTimeout(() => {
+  //     const newArr = surah.ayahs.map((items) => {
+  //       if (items.number === item.number) {
+  //         items.sajda = true;
+  //       }
+  //       return items;
+  //     });
 
-  const stop = (item, index) => {
-    const newArr = surah.ayahs.map((items) => {
-      if (items.number === item.number) {
-        items.sajda = !items.sajda;
-      }
-      return items;
-    });
-    setSurah({ ...surah, ayahs: newArr });
+  //     setSurah({ ...surah, ayahs: newArr });
+  //   }, b * 1000);
 
-    document.getElementById(`player ${index}`).pause();
-  };
+  // };
+
+  // const stop = (item, index) => {
+  //   const newArr = surah.ayahs.map((items) => {
+  //     if (items.number === item.number) {
+  //       items.sajda = !items.sajda;
+  //     }
+  //     return items;
+  //   });
+  //   setSurah({ ...surah, ayahs: newArr });
+
+  //   document.getElementById(`player ${index}`).pause();
+  // };
 
   return (
     <div className="surah">
@@ -63,7 +72,7 @@ function Surah() {
             surah.ayahs.map((item, index) => {
               return (
                 <>
-                  <div className={`cards  ${index}`} key={index}>
+                  <div className={`cards  ${index}`} key={item.number}>
                     <div className="inner">
                       <div className="number">
                         <p>{surah.number}</p>
@@ -73,17 +82,11 @@ function Surah() {
                       <div className="player">
                         <i>
                           {" "}
-                          {item.sajda ? (
-                            <BsPauseFill onClick={() => stop(item, index)} />
-                          ) : (
-                            <BsFillPlayFill
-                              onClick={() => handleClick(item, index)}
-                            />
-                          )}
-                          <ReactAudioPlayer
-                            src={item.audio}
-                            id={`player ${index}`}
-                          />
+                          {play ? <BsPauseFill /> : <BsFillPlayFill  onClick={()=>playAudio(index)}/>}
+                          {<ReactAudioPlayer
+                            src={ayahsArr[audioNum]}
+                            id={`player`}
+                          />}
                         </i>
                       </div>
                       <span>{item.sajda.toString()}</span>

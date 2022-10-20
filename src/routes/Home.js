@@ -11,7 +11,7 @@ function Home() {
       .then((response) => setSurahs(response.data.data.surahs));
   }, []);
  
-   console.log(surahs);
+  
   return (
     <div className="homeSec">
       <div className="mainImg">
