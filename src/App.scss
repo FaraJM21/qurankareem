@@ -1,0 +1,490 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper.light-mode {
+  --back: rgb(255, 255, 255);
+  .nav,
+  .homeSec,
+  .container,
+  .sidebarCont, .surah {
+    transition: 1s all;
+  }
+
+  .homeSec {
+    .backImg {
+      background: url(https://wallpapercave.com/wp/wp8963993.jpg) no-repeat
+        center center;
+      background-size: cover;
+      background-attachment: fixed;
+      filter: blur(2px) brightness(90%);
+      transition: 1s all;
+    }
+  }
+}
+
+.wrapper.dark-mode {
+  --back: rgb(12, 12, 34);
+  .nav,
+  .homeSec,
+  .container,
+  .sidebarCont, .surah {
+    transition: 1s all;
+  }
+  .homeSec {
+    .backImg {
+      background: url(https://wallpaperaccess.com/full/3096375.jpg) no-repeat
+        center center;
+      background-size: cover;
+      background-attachment: fixed;
+      filter: blur(2px) brightness(90%);
+      transition: 1s all;
+    }
+  }
+}
+
+body {
+  height: 100vh;
+  //
+}
+//
+// light mode colors
+
+#templatedef {
+  .nav {
+    .title {
+      color: black;
+    }
+  }
+
+  .link,
+  h3 {
+    color: black;
+  }
+
+  .icon {
+    i {
+      background-color: black;
+    }
+  }
+
+  .thems {
+    i {
+      color: black;
+    }
+  }
+}
+
+#template1 {
+  .nav {
+    .title {
+      color: rgb(40, 201, 255);
+    }
+  }
+
+  .link,
+  h3, .inner {
+    color: rgb(40, 201, 255);
+  }
+
+  .icon {
+    i {
+      background-color: rgb(40, 201, 255);
+    }
+  }
+
+  .thems {
+    i {
+      color: rgb(40, 201, 255);
+    }
+  }
+}
+
+#template2 {
+  .nav {
+    .title {
+      color: rgb(255, 166, 0);
+    }
+  }
+
+  .link,
+  h3,.inner {
+    color: rgb(255, 166, 0);
+  }
+
+  .icon {
+    i {
+      background-color: rgb(255, 166, 0);
+    }
+  }
+
+  .thems {
+    i {
+      color: rgb(255, 166, 0);
+    }
+  }
+}
+
+#template3 {
+  .nav {
+    .title {
+      color: lime;
+    }
+  }
+  .link,
+  h3,.inner {
+    color: lime;
+  }
+
+  .icon {
+    i {
+      background-color: lime;
+    }
+  }
+
+  .thems {
+    i {
+      color: lime;
+    }
+  }
+}
+
+#template4 {
+  .nav {
+    .title {
+      color: darkblue;
+    }
+  }
+  .link,
+  h3,.inner {
+    color: darkblue;
+  }
+
+  .icon {
+    i {
+      background-color: darkblue;
+    }
+  }
+
+  .thems {
+    i {
+      color: darkblue;
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  padding: 0 50px;
+  background-color: var(--back);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 20;
+  .logoTitle {
+    width: 250px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+    .title {
+      color: rgb(40, 201, 255);
+    }
+  }
+}
+
+.homeSec {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  background-color: var(--back);
+  .mainImg {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .images {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 30%;
+      margin: auto;
+      z-index: 1;
+      img {
+        width: 90%;
+      }
+    }
+    .backImg {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: url(https://wallpapercave.com/wp/wp8963993.jpg) no-repeat
+        center center;
+      background-size: cover;
+      background-attachment: fixed;
+      filter: blur(2px) brightness(90%);
+    }
+  }
+}
+
+.container {
+  max-width: 1140px;
+
+  .box {
+    position: relative;
+  }
+  h3 {
+    text-align: center;
+  }
+  ul {
+    width: 96%;
+    list-style-type: none;
+    margin: auto;
+    li {
+      width: 85%;
+      height: 100px;
+      border-bottom: 1px solid silver;
+
+      .link {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+        // color: rgb(40, 201, 255);
+        span,
+        h4 {
+          font-size: 16px;
+        }
+        span {
+          position: relative;
+          left: 2%;
+        }
+        .cardContent {
+          font-size: 16px;
+          height: 50%;
+          padding: 0 10px;
+          h6 {
+            font-size: 13px;
+            width: 120px;
+          }
+          border-left: 1px solid silver;
+        }
+
+        .arabicName {
+          flex: 10%;
+          direction: flex;
+          justify-content: flex-end;
+          text-align: end;
+          font-size: 18px;
+          padding: 0 2px;
+          font-family: "Noto Naskh Arabic", serif;
+        }
+      }
+    }
+
+    li:hover {
+      transform: scale(1.02);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border: none;
+    }
+  }
+}
+
+.sidebarCont {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35vh;
+  height: 100vh;
+  display: flex;
+  z-index: 20;
+  align-items: center;
+  transition: 0.5s all;
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    i {
+      width: 100%;
+      height: 100%;
+      background: rgb(40, 201, 255);
+      border-radius: 10px 0 0 10px;
+    }
+  }
+
+  i {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    transition: all 0.5s linear;
+    .themIcon {
+      animation: rotating 4s linear infinite;
+    }
+  }
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: var(--back);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    .templates,
+    .thems {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 40vh;
+      align-items: center;
+      gap: 10px;
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+
+        i {
+          font-size: 30px;
+        }
+      }
+      .template1,
+      .template2,
+      .template3,
+      .template4 {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid white;
+      }
+
+      .template1 {
+        background-color: rgb(40, 201, 255);
+      }
+
+      .template2 {
+        background-color: rgb(255, 166, 0);
+      }
+      .template3 {
+        background-color: #00ff00;
+      }
+      .template4 {
+        background-color: darkblue;
+      }
+    }
+
+    .thems {
+      div {
+        gap: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.surah {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 90px 0;
+  background-color: var(--back);
+  .list {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: red;
+    gap: 40px;
+   
+    .cards {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+ 
+      border-bottom: 2px solid silver;
+      .inner {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20px;
+        .number {
+          width: 52px;
+          height: 30px;
+          display: flex;
+          font-size: 12px;
+          gap: 10px;
+          p{
+
+           
+            height: 5%;
+          }
+          border: 1px solid silver;
+          justify-content: center;
+          align-items: center;
+        }
+        .player{
+          width: 52px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        i {
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+
+      .title {
+        width: 80%;
+        text-decoration: wavy;
+        font-size: 28px;
+        text-align: right;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0 10px;
+      }
+    }
+  }
+}
