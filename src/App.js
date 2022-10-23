@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
-          <Route path="surah" element={<Surah />}></Route>
+          <Route path="/:index/:englishName" element={<Surah />}></Route>
         </Route>
      
       </Routes>

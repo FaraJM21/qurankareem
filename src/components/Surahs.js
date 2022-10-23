@@ -11,7 +11,7 @@ function Surahs(props) {
           <div key={index} className="col-lg-4">
             <ul className="list-unstyled mb-0">
               <li>
-                <div className="link" onClick={()=>navigate('/surah', {state:index})}>
+                <div className="link" onClick={()=>navigate(`/${index}/${surah.englishName}`, {state:props.surahs[index]})}>
                   <span className=" surahNum template1">{surah.number}</span>
                   <div className="cardContent">
                     <h4 className="template1">
