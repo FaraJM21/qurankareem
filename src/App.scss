@@ -12,7 +12,8 @@
   .nav,
   .homeSec,
   .container,
-  .sidebarCont, .surah {
+  .sidebarCont,
+  .surah {
     transition: 1s all;
   }
 
@@ -33,7 +34,8 @@
   .nav,
   .homeSec,
   .container,
-  .sidebarCont, .surah {
+  .sidebarCont,
+  .surah {
     transition: 1s all;
   }
   .homeSec {
@@ -88,7 +90,8 @@ body {
   }
 
   .link,
-  h3, .inner {
+  h3,
+  .inner {
     color: rgb(40, 201, 255);
   }
 
@@ -113,7 +116,8 @@ body {
   }
 
   .link,
-  h3,.inner {
+  h3,
+  .inner {
     color: rgb(255, 166, 0);
   }
 
@@ -137,7 +141,8 @@ body {
     }
   }
   .link,
-  h3,.inner {
+  h3,
+  .inner {
     color: lime;
   }
 
@@ -161,7 +166,8 @@ body {
     }
   }
   .link,
-  h3,.inner {
+  h3,
+  .inner {
     color: darkblue;
   }
 
@@ -431,13 +437,13 @@ body {
     align-items: center;
     // background-color: red;
     gap: 40px;
-   
+
     .cards {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
- 
+
       border-bottom: 2px solid silver;
       .inner {
         width: 100px;
@@ -452,16 +458,14 @@ body {
           display: flex;
           font-size: 12px;
           gap: 10px;
-          p{
-
-           
+          p {
             height: 5%;
           }
           border: 1px solid silver;
           justify-content: center;
           align-items: center;
         }
-        .player{
+        .player {
           width: 52px;
           height: 30px;
           display: flex;
