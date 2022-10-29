@@ -38,7 +38,7 @@
   .surah {
     transition: 1s all;
   }
-  .homeSec {
+  .home {
     .backImg {
       background: url(https://wallpaperaccess.com/full/3096375.jpg) no-repeat
         center center;
@@ -52,10 +52,7 @@
 
 body {
   height: 100vh;
-  //
 }
-//
-// light mode colors
 
 #templatedef {
   .nav {
@@ -205,7 +202,7 @@ body {
   }
 }
 
-.homeSec {
+.home {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -435,16 +432,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: red;
     gap: 40px;
-
+  
     .cards {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       border-bottom: 2px solid silver;
+
+     
+
       .inner {
         width: 100px;
         height: 100%;
@@ -481,13 +479,28 @@ body {
       .title {
         width: 80%;
         text-decoration: wavy;
-        font-size: 28px;
+        font-size: 18px;
         text-align: right;
         height: 100%;
         display: flex;
         justify-content: end;
         align-items: center;
         padding: 0 10px;
+      
+      
+        
+        @media screen and (min-width:450px) and (max-width: 575px) {
+         #text{
+          font-size: 18px;
+         }
+        }
+
+        @media screen and (min-width:200px) and (max-width:450px){
+          #text{
+            font-size: 16px;
+           }
+        }
+     
       }
     }
   }

@@ -14,18 +14,7 @@ function Surah() {
   );
 
   const [isPlay, setIsplay] = useState(false);
-  const [num, setNum] = useState(6);
-
-  const playing = (e) => {
-    setTimeout(() => {
-      if (num + 1 === ayahs.length) {
-        document.getElementById("player").pause();
-      } else {
-        console.log(`============='kirdi=========`);
-        setNum(num + 1);
-      }
-    }, e.target.duration * 1000);
-  };
+  const [num, setNum] = useState(0);
 
   const play = (inx) => {
     setIsplay(true);
@@ -37,7 +26,12 @@ function Surah() {
   const pause = () => {
     setIsplay(false);
     document.getElementById("player").pause();
-    document.getElementById("player").autoplay = false;
+ 
+  };
+
+  const handleEnd = () => {
+    setNum(num + 1);
+    document.getElementById("player").autoplay = true;
   };
 
   return (
@@ -47,11 +41,8 @@ function Surah() {
           <>
             <ReactAudioPlayer
               src={ayahs[num]}
-              controls
-              loop
               id="player"
-              onPlay={playing}
-              // onPause = {stop}
+              onEnded={handleEnd}
             />
 
             {surahs.ayahs.map((item, index) => {
@@ -73,11 +64,9 @@ function Surah() {
                         )}
                       </i>
                     </div>
-
-                    <span>{item.sajda.toString()}</span>
                   </div>
                   <div className="title">
-                    <h3>{item.text}</h3>
+                    <h3 style={{color:isPlay && num === index ? 'gold' : ""}}  id = "text">{item.text}</h3>
                   </div>
                 </div>
               );
