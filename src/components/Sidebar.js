@@ -40,18 +40,16 @@ function Sidebar() {
             </div>
           </div>
 
-        
           <div className="thems">
             <h3>Theme</h3>
             <div>
-            <i className="day">
-              <BsFillSunFill  onClick={()=>handleTheme('light-mode')}/>
-            </i>
-            <i className="night">
-              <BsFillMoonFill onClick={()=>handleTheme('dark-mode')} />
-            </i>
+              <i className="day">
+                <BsFillSunFill onClick={() => handleTheme("light-mode")} />
+              </i>
+              <i className="night">
+                <BsFillMoonFill onClick={() => handleTheme("dark-mode")} />
+              </i>
             </div>
-         
           </div>
         </div>
       </div>

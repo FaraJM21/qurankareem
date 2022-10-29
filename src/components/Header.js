@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../assets/quran&&logo.png"
+import logo from "../assets/quran&&logo.png";
 function Header() {
   return (
     <>
-      <Navbar  className="nav">
-        <Navbar.Brand >
+      <Navbar className="nav">
+        <Navbar.Brand>
           <div className="logoTitle">
             <img
               src={logo}
@@ -13,7 +13,6 @@ function Header() {
               height="50"
               className="d-inline-block align-top"
               alt="logo"
-              
             />
             <h3 className="title">Quran Kareem</h3>
           </div>

@@ -433,15 +433,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-  
+
     .cards {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid silver;
-
-     
 
       .inner {
         width: 100px;
@@ -486,21 +484,18 @@ body {
         justify-content: end;
         align-items: center;
         padding: 0 10px;
-      
-      
-        
-        @media screen and (min-width:450px) and (max-width: 575px) {
-         #text{
-          font-size: 18px;
-         }
+
+        @media screen and (min-width: 450px) and (max-width: 575px) {
+          #text {
+            font-size: 18px;
+          }
         }
 
-        @media screen and (min-width:200px) and (max-width:450px){
-          #text{
+        @media screen and (min-width: 200px) and (max-width: 450px) {
+          #text {
             font-size: 16px;
-           }
+          }
         }
-     
       }
     }
   }
