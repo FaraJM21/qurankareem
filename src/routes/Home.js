@@ -4,15 +4,13 @@ import Surahs from "../components/Surahs";
 
 function Home() {
   const [surahs, setSurahs] = useState([]);
- 
+
   useEffect(() => {
     axios
       .get(`http://api.alquran.cloud/v1/quran/ar.alafasy`)
       .then((response) => setSurahs(response.data.data.surahs));
   }, []);
-  
-   console.log(surahs);
-  
+
   return (
     <div className="home">
       <div className="mainImg">

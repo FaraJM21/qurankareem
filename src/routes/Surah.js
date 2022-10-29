@@ -1,4 +1,3 @@
-// import axios from "axios";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
@@ -26,7 +25,6 @@ function Surah() {
   const pause = () => {
     setIsplay(false);
     document.getElementById("player").pause();
- 
   };
 
   const handleEnd = () => {
@@ -66,7 +64,12 @@ function Surah() {
                     </div>
                   </div>
                   <div className="title">
-                    <h3 style={{color:isPlay && num === index ? 'gold' : ""}}  id = "text">{item.text}</h3>
+                    <h3
+                      style={{ color: isPlay && num === index ? "gold" : "" }}
+                      id="text"
+                    >
+                      {item.text}
+                    </h3>
                   </div>
                 </div>
               );
