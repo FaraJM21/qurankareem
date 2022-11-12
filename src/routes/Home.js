@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Surahs from "../components/Surahs";
-
+import home from "../assets/home.png";
+import img1 from "../assets/img015__1.png";
+import img2 from "../assets/img015__2.png";
 function Home() {
   const [surahs, setSurahs] = useState([]);
 
@@ -15,17 +17,11 @@ function Home() {
     <div className="home">
       <div className="mainImg">
         <div className="images">
-          <img alt="404" src="https://quran.kemenag.go.id/images/home.png" />
+          <img alt="404" src={home} />
           <br />
-          <img
-            alt="404"
-            src="https://quran.kemenag.go.id/images/img015__1.png"
-          />
+          <img alt="404" src={img1} />
           <br />
-          <img
-            alt="404"
-            src="https://quran.kemenag.go.id/images/img015__2.png"
-          />
+          <img alt="404" src={img2} />
         </div>
 
         <div className="backImg"></div>
