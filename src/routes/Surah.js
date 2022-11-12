@@ -5,13 +5,8 @@ import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 
 function Surah() {
   let number = useLocation();
-
-  const [surahs, setSurahs] = useState(number.state);
-
-  const [ayahs, setAyahs] = useState(
-    number.state.ayahs.map((item) => item.audio)
-  );
-
+  const surahs = number.state;
+  const ayahs = number.state.ayahs.map((item) => item.audio);
   const [isPlay, setIsplay] = useState(false);
   const [num, setNum] = useState(0);
 
