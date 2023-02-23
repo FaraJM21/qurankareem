@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
@@ -9,6 +9,11 @@ function Surah() {
   const ayahs = number.state.ayahs.map((item) => item.audio);
   const [isPlay, setIsplay] = useState(false);
   const [num, setNum] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const play = (inx) => {
     setIsplay(true);

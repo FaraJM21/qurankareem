@@ -1,16 +1,14 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
 import Surahs from "../components/Surahs";
 import home from "../assets/home.png";
 import img1 from "../assets/img015__1.png";
 import img2 from "../assets/img015__2.png";
+import { suraharr } from "../db/surahdb";
+import { useEffect } from "react";
 function Home() {
-  const [surahs, setSurahs] = useState([]);
-
+  const surahs = suraharr;
+  // `http://api.alquran.cloud/v1/quran/ar.alafasy`
   useEffect(() => {
-    axios
-      .get(`http://api.alquran.cloud/v1/quran/ar.alafasy`)
-      .then((response) => setSurahs(response.data.data.surahs));
+    window.scrollTo(0, 0);
   }, []);
 
   return (

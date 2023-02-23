@@ -5,6 +5,10 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .wrapper.light-mode {
@@ -56,7 +60,8 @@ body {
 
 #templatedef {
   .nav {
-    .title {
+    a {
+      font-size: 25px;
       color: black;
     }
   }
@@ -186,6 +191,7 @@ body {
   top: 0;
   position: fixed;
   padding: 0 50px;
+  scroll-behavior: auto;
   background-color: var(--back);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -269,6 +275,7 @@ body {
         text-decoration: none;
         position: relative;
         cursor: pointer;
+        padding: 0 16px;
         // color: rgb(40, 201, 255);
         span,
         h4 {
@@ -481,7 +488,7 @@ body {
         text-align: right;
         height: 100%;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         padding: 0 10px;
 
